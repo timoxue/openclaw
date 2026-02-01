@@ -302,6 +302,26 @@ const DOCKS: Record<ChatChannelId, ChannelDock> = {
       buildToolContext: (params) => buildSlackThreadingToolContext(params),
     },
   },
+  feishu: {
+    id: "feishu",
+    capabilities: {
+      chatTypes: ["direct", "group"],
+      media: true,
+    },
+    outbound: { textChunkLimit: 4096 },
+    config: {
+      resolveAllowFrom: () => [],
+      formatAllowFrom: ({ allowFrom }) =>
+        allowFrom
+          .map((entry) => String(entry).trim())
+          .filter(Boolean)
+          .map((entry) => entry.toLowerCase()),
+    },
+    groups: {
+      resolveRequireMention: () => true,
+      resolveToolPolicy: () => undefined,
+    },
+  },
   signal: {
     id: "signal",
     capabilities: {

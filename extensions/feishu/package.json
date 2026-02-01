@@ -1,0 +1,80 @@
+{
+  "name": "@timoxue/openclaw-feishu",
+  "version": "1.0.0",
+  "description": "Feishu (Lark) channel plugin for OpenClaw",
+  "type": "module",
+  "main": "index.js",
+  "keywords": [
+    "openclaw",
+    "channel",
+    "feishu",
+    "lark",
+    "im",
+    "bot",
+    "messaging",
+    "plugin"
+  ],
+  "author": "Timoxue <timo@xue.me>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timoxue/openclaw-feishu"
+  },
+  "homepage": "https://github.com/timoxue/openclaw-feishu#readme",
+  "bugs": {
+    "url": "https://github.com/timoxue/openclaw-feishu/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Tests not configured yet\"",
+    "test:coverage": "echo \"Coverage not configured yet\"",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "prepack": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.1.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "feishu",
+      "label": "飞书",
+      "selectionLabel": "飞书（Lark/Feishu）",
+      "detailLabel": "飞书机器人",
+      "docsPath": "/channels/feishu",
+      "docsLabel": "feishu",
+      "blurb": "飞书/Lark 机器人，支持私聊和群聊消息接收与发送。",
+      "order": 80,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@timoxue/openclaw-feishu",
+      "localPath": "extensions/feishu",
+      "defaultChoice": "npm"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ]
+}

@@ -1,0 +1,48 @@
+# Source files
+src/
+*.ts
+!index.ts
+!index.d.ts
+
+# Build artifacts
+dist/
+*.map
+
+# Tests
+*.test.ts
+*.spec.ts
+__tests__/
+test/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/

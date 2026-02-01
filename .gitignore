@@ -71,3 +71,6 @@ USER.md
 
 # local tooling
 .serena/
+nul
+package-lock.json
+pnpm-lock.yaml
